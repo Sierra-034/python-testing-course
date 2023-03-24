@@ -1,13 +1,13 @@
 import unittest
 
 from product import Product
+from shopping_cart import ShoppingCart
 
 class TestShoppingCart(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.some_value = 'samuel'   # This can be used as self.some_value
-        print('>>> setUpClass se ejecuta antes de todo')
+        pass
 
     @classmethod
     def tearDownClass(cls):
@@ -17,6 +17,10 @@ class TestShoppingCart(unittest.TestCase):
         self.name = 'iPhone'
         self.price = 500.00
         self.smartphone = Product(self.name, self.price)
+
+        self.shopping_cart_1 = ShoppingCart()
+        self.shopping_cart_2 = ShoppingCart()
+        self.shopping_cart_2.add_product(self.smartphone)
 
     def tearDown(self):
         pass
@@ -34,6 +38,13 @@ class TestShoppingCart(unittest.TestCase):
 
     def test_product_price(self):
         self.assertEqual(self.smartphone.price, self.price)
+
+    def test_shopping_cart_is_empty(self):
+        self.assertTrue(self.shopping_cart_1.is_empty(), 'El carrito no está vacío')
+
+    def test_shopping_cart_has_products(self):
+        self.assertFalse(self.shopping_cart_2.is_empty())
+        self.assertTrue(self.shopping_cart_2.has_products())
 
 
 if __name__ == '__main__':
