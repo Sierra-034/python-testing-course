@@ -4,13 +4,20 @@ from product import Product
 class ShoppingCart:
 
     def __init__(self) -> None:
-        self.products: List[Product] = []
+        self.__products: List[Product] = []
+
+    @property
+    def products(self):
+        return self.__products.copy()
 
     def add_product(self, product: Product) -> None:
-        self.products.append(product)
+        self.__products.append(product)
 
     def is_empty(self) -> bool:
-        return len(self.products) == 0
+        return len(self.__products) == 0
 
     def has_products(self) -> bool:
         return not self.is_empty()
+
+    def remove_product(self, product: Product) -> None:
+        self.__products.remove(product)
