@@ -93,6 +93,10 @@ class TestShoppingCart(unittest.TestCase):
     def test_skip_example_two(self):
         pass
 
+    def test_code_product(self):
+        self.assertRegex(self.smartphone.code,
+                         'self.smartphone.name', 'expresion no encontrada')
+
 
 if __name__ == '__main__':
     unittest.main()
