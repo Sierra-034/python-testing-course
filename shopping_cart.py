@@ -1,6 +1,7 @@
 from typing import List
 from product import Product
 
+
 class ShoppingCart:
 
     def __init__(self) -> None:
