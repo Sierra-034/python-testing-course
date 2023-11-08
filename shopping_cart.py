@@ -21,3 +21,10 @@ class ShoppingCart:
 
     def remove_product(self, product: Product) -> None:
         self.__products.remove(product)
+
+    @property
+    def total(self):
+        return sum([
+            (product.price - product.discount)
+            for product in self.__products
+        ])
