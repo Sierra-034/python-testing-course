@@ -1,7 +1,7 @@
 import unittest
 
-from product import Product, ProductDiscountError
-from shopping_cart import ShoppingCart
+from entities.product import Product, ProductDiscountError
+from entities.shopping_cart import ShoppingCart
 
 
 def is_available_to_skip():
@@ -95,7 +95,7 @@ class TestShoppingCart(unittest.TestCase):
 
     def test_code_product(self):
         self.assertRegex(self.smartphone.code,
-                         'self.smartphone.name', 'expresion no encontrada')
+                         self.smartphone.name, 'expresion no encontrada')
 
 
 if __name__ == '__main__':
