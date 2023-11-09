@@ -1,5 +1,5 @@
 from typing import List
-from entities.product import Product
+from src.entities.product import Product
 
 
 class ShoppingCart:
