@@ -1,6 +1,6 @@
 import unittest
 
-from src.entities import Product, ShoppingCart, ProductDiscountError
+from myunittesting.entities import Product, ShoppingCart, ProductDiscountError
 
 
 def is_available_to_skip():
