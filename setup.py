@@ -9,7 +9,7 @@ setup(
     author='Samuel Gómez',  # Your name or your team’s name
     author_email='samuel.gomez.balderas@gmail.com',  # Your email address
     url='https://github.com/yourusername/your-repo',  # URL of the package’s GitHub repository
-    packages=find_packages(exclude=['tests*']),  # Automatically finds all sub-packages
+    packages=find_packages(exclude=['test*']),  # Automatically finds all sub-packages
     include_package_data=True,  # Include data from MANIFEST.in
     classifiers=[
         'Programming Language :: Python :: 3',
