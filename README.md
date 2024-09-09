@@ -1,2 +1,3 @@
-- To run tests you can execute: `python -m unittest tests.test_shopping_cart`
-- To run all tests: `python -m unittest discover`
+- First you need to install this package locally: `pip install -e .`
+- To run unittest tests, you need: `python -m unittest discover -s test_unittest`
+- To run pytest tests, you first need pytest installed: `pip install pytest`, then: `pytest test_pytest`
