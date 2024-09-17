@@ -4,3 +4,5 @@
 
 - You can also run individual or set of test: `pytest test_pytest/test_main.py::TestExample::test_suma_dos_numeros`
 - To see standard output you'll need to set `-s`: `pytest -s <path_to_test>`
+- To run test marked you need to mark them previous to execute with decorator: `@pytest.mark.<mark_name>`
+- Run marked tests: `pytest -m <mark_name>`
