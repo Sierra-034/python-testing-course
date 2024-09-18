@@ -28,3 +28,7 @@ class TestTask:
         task = Task('Title', 'Description', 'samuel_g', due_date)
 
         assert task.due_date > datetime.now()
+    
+    @pytest.mark.skipif(False, reason='La prueba no cumple los requerimientos.')
+    def test_skip(self):
+        pass
