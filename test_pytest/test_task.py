@@ -27,13 +27,22 @@ class TestTask:
     def test_task(self):
         assert True
     
-    def test_new_task(self):
-        due_date = datetime.now() + timedelta(days=1)
-        task = Task('Title', 'Description', 'samuel_g', due_date)
+    @pytest.mark.parametrize(
+        'title, description, assigned_to, due_date',
+        [
+            ('Title 1', 'Description 1', 'User 1', datetime.now() + timedelta(days=1)),
+            ('Title 2', 'Description 2', 'User 2', datetime.now() + timedelta(days=1)),
+            ('Title 3', 'Description 3', 'User 3', datetime.now() + timedelta(days=1)),
+            ('Title 4', 'Description 4', 'User 4', datetime.now() + timedelta(days=1)),
+            ('Title 5', 'Description 5', 'User 5', datetime.now() + timedelta(days=1)),
+        ]
+    )
+    def test_new_task(self, title, description, assigned_to, due_date):
+        task = Task(title, description, assigned_to, due_date)
 
-        assert task.title == 'Title'
-        assert task.description == 'Description'
-        assert task.assigned_to == 'samuel_g'
+        assert task.title == title
+        assert task.description == description
+        assert task.assigned_to == assigned_to
         assert task.due_date == due_date
 
     @pytest.mark.due_date
