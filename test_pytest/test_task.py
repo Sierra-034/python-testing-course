@@ -3,6 +3,26 @@ from datetime import datetime, timedelta
 
 from mypytest import Task, DueDateError
 
+@pytest.fixture
+def username():
+    print('\n>>> Antes de prueba')
+    yield 'Cody'
+    print('\n>>> Depués de prueba')
+
+@pytest.fixture
+def password():
+    return 'password'
+
+def test_username(username):
+    assert username == 'Cody'
+
+def test_username_and_password(username, password):
+    assert username == 'Cody'
+    assert password == 'password'
+
+def is_available_to_skip():
+    return True
+
 class TestTask:
     def test_task(self):
         assert True
@@ -29,6 +49,6 @@ class TestTask:
 
         assert task.due_date > datetime.now()
     
-    @pytest.mark.skipif(False, reason='La prueba no cumple los requerimientos.')
+    @pytest.mark.skipif(is_available_to_skip(), reason='La prueba no cumple los requerimientos.')
     def test_skip(self):
         pass
