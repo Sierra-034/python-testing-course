@@ -11,3 +11,6 @@
 - Then you need to run your test: `coverage run -m pytest <path_to_test>`
 - Or you can use unittest: `coverage run -m unittest <arguments/options>`
 - First we need to run tests through coverage, then generate report: `coverage report`
+- Now we can generate a html coverage report: `coverage html`
+
+- You can start a http server: `python -m http.server`
